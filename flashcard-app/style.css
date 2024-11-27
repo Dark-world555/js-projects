@@ -1,0 +1,184 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    box-sizing: border-box;
+}
+
+.app-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.flashcard-form {
+    margin-bottom: 20px;
+}
+
+.flashcard-form input {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.flashcards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    max-height: 55vh; /* Limit the container's height */
+    overflow-y: auto; /* Make the container scrollable when there are too many cards */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Style for individual flashcards */
+.flashcard {
+    background-color: white;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: relative;
+}
+
+.flashcard.flip {
+    transform: rotateY(180deg);
+}
+
+.flashcard .front, .flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    backface-visibility: hidden;
+}
+.flashcard .front h3 {
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Hides overflow text */
+    text-overflow: ellipsis; /* Adds ellipses (...) for overflow */
+    max-width: 100%; /* Ensure it doesn’t exceed the card width */
+    font-size: 1.2em;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.flashcard .back {
+    transform: rotateY(180deg);
+    background-color: #f0f0f0;
+}
+
+/* Styling for the delete button */
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #d9534f;
+}
+.flashcard.flip .delete-btn{
+    display: none;
+}
+
+/* styles.css */
+
+/* Message box styles */
+.message-box {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    position: fixed;
+    top: 0px;
+    left: 40%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media Queries for smaller screens (Mobile and Tablet devices) */
+@media (max-width: 768px) {
+    .flashcards-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        max-height: 70vh; /* Adjust height for mobile and tablet */
+    }
+    .flashcard {
+        width: 180px;
+        height: 250px; /* Adjust card size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .flashcards-container {
+        grid-template-columns: 3fr; /* Stack cards vertically on mobile */
+        max-height: 60vh; /* Allow more space for cards on small screens */
+    }
+    .flashcard {
+        width: 150px;
+        height: 220px; /* Adjust card size for small screens */
+    }
+    .flashcard-form input {
+        width: 150px; /* Adjust input fields for mobile */
+    }
+    .message-box{
+        left: 30%;
+    }
+}
+
+@media (max-width: 375px) {
+    .flashcards-container {
+        grid-template-columns: 3fr; /* Stack cards vertically on mobile */
+        max-height: 60vh; /* Allow more space for cards on small screens */
+    }
+    .flashcard {
+        width: 150px;
+        height: 220px; /* Adjust card size for small screens */
+    }
+    .flashcard-form input {
+        width: 150px; /* Adjust input fields for mobile */
+    }
+    .message-box{
+        left: 20%;
+    }
+}

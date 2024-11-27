@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online CV/Portfolio Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Online CV/Portfolio Generator</h1>
+
+        <form id="cvForm">
+            <h2>Personal Details</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number"><br><br>
+
+            <label for="summary">Professional Summary:</label><br>
+            <textarea id="summary" rows="4" placeholder="Write a brief summary of your skills and experience"></textarea><br><br>
+
+            <h2>Experience</h2>
+            <div id="experienceSection">
+                <label for="experience">Work Experience:</label><br>
+                <input type="text" id="experience" placeholder="Company Name, Job Title"><br><br>
+                <textarea id="experienceDescription" rows="4" placeholder="Describe your work experience"></textarea><br><br>
+            </div>
+
+            <button type="button" onclick="addExperience()">Add More Experience</button><br><br>
+
+            <h2>Skills</h2>
+            <input type="text" id="skills" placeholder="List your skills, separated by commas"><br><br>
+
+            <h2>Projects</h2>
+            <input type="text" id="projects" placeholder="List your projects, separated by commas"><br><br>
+
+            <h2>Certifications</h2>
+            <input type="text" id="certifications" placeholder="List certifications, separated by commas"><br><br>
+
+            <h2>Hobbies</h2>
+            <input type="text" id="hobbies" placeholder="List your hobbies, separated by commas"><br><br>
+
+            <button type="submit">Generate CV</button>
+        </form>
+
+        <hr>
+
+        <div id="cvPreview" style="display: none;">
+            <h2>CV/Portfolio Preview</h2>
+            <div id="cvOutput"></div>
+            <button id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+            <button onclick="goHome()">New One</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

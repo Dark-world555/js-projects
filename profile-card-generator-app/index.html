@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>ID Card Generator</h2>
+
+        <!-- Input Fields -->
+        <div id="input-section">
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="enrollment" placeholder="Enter Enrollment No.">
+            <input type="text" id="college" placeholder="Enter College Name">
+            <input type="text" id="location" placeholder="Enter Location">
+            <input type="file" id="photo" accept="image/*">
+
+            <button id="generate-card">Generate Card</button>
+        </div>
+
+        <!-- ID Card Display -->
+        <div id="card-section" class="card-section" style="display: none;">
+            <div id="id-card">
+                <img id="card-photo" src="" alt="Photo" />
+                <div id="card-details">
+                    <h3 id="card-name"></h3>
+                    <p id="card-enrollment"></p>
+                    <p id="card-college"></p>
+                    <p id="card-location"></p>
+                </div>
+            </div>
+            <!-- <button id="download-btn">Download Card</button> -->
+            <button id="new-card-btn">New Card</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
